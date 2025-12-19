@@ -1,4 +1,4 @@
-test = document.getElementById("christmas")
-squoo = "Squanolk"
-test.innerHTML = squoo
+var test = document.getElementById("boat")
+var squoo = "Squanolk"
+test.innerHTML = "Test"
 console.log("Interactivity script loaded successfully.")
