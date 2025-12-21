@@ -12,9 +12,9 @@ function divUnformatted(ID) {
 
     var yearTime = time.getFullYear()
     var DateThe = dated += yearTime
-
+    var DateThe2 = new Date(DateThe)
     // const theDate = time.getMonth(month) + time.getDay(day)
-    var theDate = DateThe
+    var theDate = DateThe2
 
     let timeRemaining = time.getTime() - theDate.getTime()
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
