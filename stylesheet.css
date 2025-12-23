@@ -1,4 +1,47 @@
+:root {
+    --scroll-position: 8px
+}
+
+
+
 #CurrentDT {
     font-size: 3em;
     font-family: Arial;
+}
+
+.christContainer {
+    padding-left: 4px;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 8px 8px 8px 16px;
+    /* border-left: 12px; */
+    border-left-color: rgb(0, 181, 0);
+    /* border-left-color: linear-gradient(green 20%, red 20%, white 20%, red 20%, green 20%); */
+
+
+
+    background-image: linear-gradient(to right, green, lime);
+    animation: forwards;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+
+}
+
+#holidaylabel {
+    font-size: 20px;
+    font-family: 'Trebuchet MS';
+}
+
+#timeRemaining {
+    font-family: 'Gill Sans';
+    font-weight: 550;
+    font-size: 22px;
+    /* font-size: 1px; */
+
+}
+
+#christmas {
+    font-family: helvetica;
+    font-weight: bold;
 }

@@ -1,5 +1,11 @@
 
 
+// css interlinking functionality
+const preVerticalScroll = window.scrollY + 50
+const verticalScroll = preVerticalScroll * 0.6;
+const rootElement = document.documentElement
+rootElement.style.setProperty('--scroll-position', verticalScroll)
+
 
 
 // function Round(inputInt) {
@@ -35,6 +41,9 @@ function timeRemainAndDate(ID, childID) {
 
     const divChild = document.getElementById(childID)
     const divTarget = document.getElementById(ID)
+
+    let holidayName = divChild.dataset.holidayname
+
     console.info("Div aquired (Plain Text)")
 
     // var result = makeTheDateIntoADate(ID)
@@ -77,7 +86,7 @@ function timeRemainAndDate(ID, childID) {
 
     // divChild. = timeRemains
     divTarget.innerHTML = "Todays date is: " + currentDMY.toString()
-    divChild.innerHTML = "Time remaing: " + timeRemains
+    divChild.innerHTML = "There are " + timeRemains + " days until " + holidayName + "!"
 
 
 
@@ -98,7 +107,7 @@ function divTime(ID) {
     // const options = {}
     const displayDate = time.toLocaleDateString(undefined, options);
 
-    divTarget.innerHTML = displayDate
+    divTarget.innerHTML = "Today is: " + displayDate
 }
 
 
@@ -121,4 +130,10 @@ function callthings() {
     // makeTheDateIntoADate("m")
 }
 
-callthings()
+
+function callthings2() {
+    timeRemainAndDate("christmas", "timeRemaining")
+    divTime("CurrentDT")
+}
+callthings2()
+
