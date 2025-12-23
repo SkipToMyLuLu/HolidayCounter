@@ -2,54 +2,92 @@
 
 
 
+// function Round(inputInt) {
+
+// }
+
+
+function makeTheDateIntoADate(ID) {
+
+    const divTarget = document.getElementById(ID)
+    console.log('div target2 with the  ' + divTarget.dataset.eventdate)
+    console.log('we got the div from the function to make things into dates yahoo')
+
+
+    const currentDMY = new Date
+
+    var EventDate = divTarget.dataset.eventdate
+    console.log('event date from html:  ' + EventDate)
+
+
+    const currentYear = new Date().getFullYear()
+    console.log('current year:  ' + currentYear)
+
+    return { 'currentYear': currentYear, 'EventDate': EventDate, 'currentDMY': currentDMY }
+
+}
 
 
 
-function divUnformatted(ID) {
 
+
+function timeRemainAndDate(ID, childID) {
+
+    const divChild = document.getElementById(childID)
     const divTarget = document.getElementById(ID)
     console.info("Div aquired (Plain Text)")
 
-    const EventDateDATA = divTarget.dataset.EventDate
-    const EventDate = new Date(EventDateDATA)
+    // var result = makeTheDateIntoADate(ID)
+    // console.log('result: ', result)
+    // console.log('result.currentyear: ', result.currentYear)
+    const eventDateOBJ = makeTheDateIntoADate(ID)
+    console.log('event date obj', eventDateOBJ)
+    var eventDate = eventDateOBJ.EventDate.toString().concat('-' + eventDateOBJ.currentYear.toString())
+    const currentDMY = eventDateOBJ.currentDMY
+    console.log('dmy current', currentDMY)
 
-    var timeRemaining = EventDate
+    console.log('eventDate: str  ', eventDate)
 
-    const millisecondsPerDay = 1000 * 60 * 60 * 24;
-    let remainingDayTime = timeRemaining / millisecondsPerDay
+    let eventDateINT = new Date(eventDate)
+    console.log('event adte int. ;  ', eventDateINT)
+
+    // const millisecondsPerDay = 1000 * 60 * 60 * 24;
+    const millisecondsPerDay = 86400000
+    let timeRemains
+    let timeRemainsDEC = Math.abs(eventDateINT - currentDMY) / millisecondsPerDay
+    // let timeRemainsDEC = 1.45
+    console.log('time remains dec', timeRemainsDEC)
+    var timeRemainsROUDN = Math.round(timeRemainsDEC)
+    console.log('rounded remains :', timeRemainsROUDN)
+
+    if (timeRemainsROUDN > timeRemainsDEC) {
+        timeRemains = timeRemainsROUDN
+        console.log('time remains roudn is greater than dec')
+    }
+    if (timeRemainsROUDN < timeRemainsDEC) {
+        timeRemainsROUDN++
+        console.log('time remains roudn', timeRemainsROUDN)
+        timeRemains = timeRemainsROUDN
+        console.log('time reimains roudn is less than dec')
+    }
+
+    console.log('time remains : ', timeRemains)
+    // / 1000 / 60 / 60 / 24
+
+
+    // divChild. = timeRemains
+    divTarget.innerHTML = "Todays date is: " + currentDMY.toString()
+    divChild.innerHTML = "Time remaing: " + timeRemains
 
 
 
-    divTarget.innerHTML = remainingDayTime
+
 
 
 }
-// const month = divTarget.dataset.month
-// const day = divTarget.dataset.day
-// var dated = divTarget.dataset.DateHyphen
 
 
 
-
-// const time = new Date
-
-// var yearTime = time.getFullYear()
-// var DateThe = dated += yearTime
-// var DateThe2 = new Date(DateThe)
-// // const theDate = time.getMonth(month) + time.getDay(day)
-// var theDate = DateThe2
-
-// let timeRemaining = time.getTime() - theDate.getTime()
-
-// console.log(remainingDayTime)
-
-
-// let monthRemain = time.getMonth() - month
-// console.log("month remain + " + monthRemain)
-
-
-// let dayRemain = time.getDay() - day
-// console.log("dayremain " + dayRemain)
 
 
 function divTime(ID) {
@@ -73,7 +111,14 @@ function callthings() {
     // console.info('div plain txt fun. run, for chris')
     divTime("CurrentDT")
     console.log("divtime")
-    divUnformatted("christmas")
+    console.log("Running div unformat with m as non")
+    // divUnformatted(m)
+    console.log("running div unformatted with m as string")
+    timeRemainAndDate("christmas", "timeRemaining")
+    console.log("running makedate function into M non")
+    // makeTheDateIntoADateThingYahooThisIsVeryCoolNameIsItNotQuestionMark(m);
+    console.log("running make date function with M as str")
+    // makeTheDateIntoADate("m")
 }
 
 callthings()

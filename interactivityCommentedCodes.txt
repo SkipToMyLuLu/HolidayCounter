@@ -1,0 +1,57 @@
+// const month = divTarget.dataset.month
+// const day = divTarget.dataset.day
+// var dated = divTarget.dataset.DateHyphen
+
+
+
+
+// const time = new Date
+
+// var yearTime = time.getFullYear()
+// var DateThe = dated += yearTime
+// var DateThe2 = new Date(DateThe)
+// // const theDate = time.getMonth(month) + time.getDay(day)
+// var theDate = DateThe2
+
+// let timeRemaining = time.getTime() - theDate.getTime()
+
+// console.log(remainingDayTime)
+
+
+// let monthRemain = time.getMonth() - month
+// console.log("month remain + " + monthRemain)
+
+
+// let dayRemain = time.getDay() - day
+// console.log("dayremain " + dayRemain)
+
+
+
+// var EventDateDATA = divTarget.dataset.EventDate
+// console.log('EVENTDATEDAAAA : ' + EventDateDATA)
+
+// var preEventDate = EventDateDATA
+
+// const EventDate = new Date(preEventDate)
+// // const EventDate =
+
+
+// console.log('event date usable not to string, raw. : ' + EventDate)
+// console.log('event date usable to string generic :  ' + EventDate.toString())
+// console.log('event date usable to date string.  :  ' + EventDate.toDateString())
+
+// var timeRemaining = EventDate
+
+// console.log('time remaining :  ' + timeRemaining)
+
+// const millisecondsPerDay = 1000 * 60 * 60 * 24;
+// console.info('miliseconds in a day ' + millisecondsPerDay)
+
+// var remainingDayTime = timeRemaining / millisecondsPerDay
+// console.log('remainging dat time var: ' + remainingDayTime)
+
+
+// divTarget.innerHTML = remainingDayTime
+// console.log('remaining day time:  ' + remainingDayTime)
+// console.log('idk if thisl work but logging divtarget.innerhtml')
+// console.log('yeah nah im not even gonna try for the above log :S')
